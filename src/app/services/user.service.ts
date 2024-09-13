@@ -15,4 +15,10 @@ export class UserService {
       .get(`${this.URL_REQRES}/users?per_page=6`)
       .pipe(map((resp: any) => resp['data']));
   }
+
+  getUserById(id: string) {
+    return this.http
+      .get(`${this.URL_REQRES}/users/${id}`)
+      .pipe(map((resp: any) => resp['data']));
+  }
 }

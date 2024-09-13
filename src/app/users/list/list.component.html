@@ -1,3 +1,10 @@
+<div *ngIf="loading" class="alert alert-info" role="alert">loading...</div>
+
+<div *ngIf="error" class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Error!</h4>
+  <p>{{ error | json }}</p>
+</div>
+
 <div class="row row-cols-1 row-cols-md-2 g-4">
   <div class="col" style="width: 280px" *ngFor="let user of users">
     <div class="card">

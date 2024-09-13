@@ -1,1 +1,19 @@
-<p>user works!</p>
+<div *ngIf="loading" class="alert alert-info" role="alert">loading...</div>
+
+<div *ngIf="error" class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Error!</h4>
+  <p>{{ error | json }}</p>
+</div>
+
+<div *ngIf="!error" class="row">
+  <div class="col-4">
+    <img [src]="user?.avatar" alt="" />
+  </div>
+
+  <div class="col">
+    <div class="list-group">
+      <div class="list-group-item"><b>Name:</b> {{ user?.first_name }}</div>
+      <div class="list-group-item"><b>Last Name:</b> {{ user?.last_name }}</div>
+    </div>
+  </div>
+</div>
